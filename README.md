@@ -13,7 +13,8 @@ HelloCV/
 │   │   ├── 📄 advanced-features.md       # 高级特性
 │   │   └── 📄 troubleshooting.md         # 问题排查
 │   └── 📁 practice-reports/              # 实践报告
-│       └── 📄 cryptotool-development.md  # 加密工具开发报告
+│       ├── 📄 cryptotool-development.md  # 加密工具开发报告
+│       └── 📄 traffic-light-detection.md # 交通灯检测报告
 ├── 📁 CryptoTool/                        # 文本加密工具项目
 │   ├── 📄 CMakeLists.txt                 # 项目构建配置
 │   ├── 📁 src/                           # 源代码目录
@@ -26,6 +27,15 @@ HelloCV/
 │   │   └── 📄 menu.h                     # 用户界面头文件
 │   ├── 📁 include/                       # 头文件目录
 │   └── 📁 build/                         # 构建输出目录
+├── 📁 TrafficLightDetection/             # 交通信号灯检测项目
+│   ├── 📄 CMakeLists.txt                 # 项目构建配置
+│   ├── 📁 src/                           # 源代码目录
+│   │   ├── 📄 main.cpp                   # 主程序入口
+│   │   └── 📄 traffic_light_detector.cpp # 检测器实现
+│   ├── 📁 data/                          # 数据文件目录
+│   │   ├── 📄 TrafficLight.mp4           # 输入视频文件
+│   │   └── 📄 result.avi                 # 输出结果视频
+│   └── 📁 build/                         # 构建输出目录
 ├── 📁 docker-examples/                   # Docker 实践示例
 │   ├── 📄 Dockerfile                     # 基础 Dockerfile
 │   ├── 📄 docker-compose.yml             # 容器编排配置
@@ -34,7 +44,7 @@ HelloCV/
 │   ├── 📄 basic-example/                 # 基础示例
 │   ├── 📄 multi-directory/               # 多目录项目
 │   └── 📄 thirdparty-integration/        # 第三方库集成
-└── 📄 requirements.txt                   # Python 依赖列表（可选）
+└── 📄 requirements.txt                   # Python 依赖列表
 图像处理基础
 # 基础图像操作示例
 import cv2
@@ -398,3 +408,67 @@ CryptoTool 开发全过程
 性能优化与测试
 
 
+交通信号灯检测项目 (第三周实践任务)
+
+项目简介
+
+基于 OpenCV 的实时交通信号灯检测系统，能够准确识别视频中的红绿灯状态并在图像上进行可视化标记。
+
+核心功能
+
+✅ 实时视频流处理
+✅ 圆形交通灯检测
+✅ 红绿双色识别
+✅ 抗光线干扰处理
+✅ 实时结果可视化
+✅ 视频输出生成
+技术特性
+
+cpp
+// 核心技术栈
+- 霍夫圆变换 (Hough Circle Transform)
+- HSV色彩空间分析
+- 形态学图像处理
+- 自适应直方图均衡化
+- 动态阈值检测
+快速开始
+
+bash
+# 构建项目
+cd TrafficLightDetection
+mkdir build && cd build
+cmake ..
+make
+
+# 运行检测
+./TrafficLightDetection
+输出结果
+
+生成 result.avi 输出视频
+红灯：红色圆形框标记
+绿灯：绿色圆形框标记
+实时状态显示在画面左上角
+
+
+OpenCV 核心技术应用
+
+图像处理基础
+
+图像I/O操作：cv::imread(), cv::imshow(), cv::imwrite()
+色彩空间转换：BGR↔HSV, BGR↔GRAY, BGR↔RGB
+像素级操作：cv::Mat::at<>(), 通道分离与合并
+视频处理能力
+
+视频流处理：cv::VideoCapture, cv::VideoWriter
+实时帧处理：逐帧读取、处理、显示和保存
+性能优化：跳帧处理、ROI区域、多线程
+图像变换与滤波
+
+几何变换：缩放、旋转、平移、仿射变换、透视变换
+图像滤波：高斯滤波、中值滤波、双边滤波
+形态学操作：膨胀、腐蚀、开运算、闭运算
+特征检测与识别
+
+边缘检测：Canny、Sobel、Laplacian算子
+形状检测：霍夫圆变换、霍夫线变换
+颜色识别：HSV色彩空间阈值分割
