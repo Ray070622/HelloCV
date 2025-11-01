@@ -1,35 +1,93 @@
-# HelloCV
-项目结构
-HelloCV/
-├── 📄 README.md                          # 项目说明文档
+#HelloCV/
+├── 📄 README.md                          # 项目总说明文档
 ├── 📄 YUQUE_LINKS.md                     # 语雀学习文档汇总
-├── 📁 docs/                              # 项目文档目录
-│   ├── 📁 docker-learning/               # Docker 学习资料
-│   ├── 📁 cmake-learning/                # CMake 学习资料
-│   ├── 📁 practice-reports/              # 实践报告
-│   ├── 📁 ros2-learning/                 # 【新增】ROS2 学习资料
-│   │   ├── 📄 basic-concepts.md          # ROS2 基础概念
-│   │   ├── 📄 communication-mechanisms.md # 通信机制详解
-│   │   └── 📄 practice-guide.md          # 实践指南
-│   └── 📁 gazebo-learning/               # 【新增】Gazebo 学习资料
-│       ├── 📄 simulation-basics.md       # 仿真基础
-│       ├── 📄 sensor-integration.md      # 传感器集成
-│       └── 📄 ros2-gazebo-bridge.md      # ROS2-Gazebo 桥接
-├── 📁 CryptoTool/                        # 文本加密工具项目
-├── 📁 TrafficLightDetection/             # 交通信号灯检测项目
-├── 📁 docker-examples/                   # Docker 实践示例
-├── 📁 cmake-examples/                    # CMake 实践示例
-├── 📁 ros2-workspace/                    # 【新增】ROS2 工作空间
-│   ├── 📁 src/                           # 功能包源代码
-│   │   ├── 📁 my_robot_description/      # 机器人描述包
-│   │   ├── 📁 my_controller/             # 控制节点包
-│   │   └── 📁 my_sensors/                # 传感器节点包
-│   └── 📄 setup_instructions.md          # 环境配置说明
-└── 📁 gazebo-simulation/                 # 【新增】Gazebo 仿真项目
-    ├── 📁 worlds/                        # 仿真世界文件
-    ├── 📁 models/                        # 机器人模型
-    ├── 📁 launch/                        # 启动文件
-    └── 📄 simulation_guide.md            # 仿真使用指南
+├── 📁 environment/                       # 开发环境配置
+│   ├── 📄 docker-setup.md               # Docker 环境配置
+│   ├── 📄 ros2-installation.md          # ROS2 环境安装
+│   ├── 📄 gazebo-setup.md               # Gazebo 环境配置
+│   └── 📄 dependencies.md               # 项目依赖列表
+├── 📁 docs/                              # 学习文档目录
+│   ├── 📁 phase-1-basics/               # 第一阶段：基础技能
+│   │   ├── 📁 git-version-control/      # Git 版本控制
+│   │   ├── 📁 docker-container/         # Docker 容器技术
+│   │   ├── 📁 cmake-build-system/       # CMake 构建系统
+│   │   └── 📁 opencv-fundamentals/      # OpenCV 基础
+│   ├── 📁 phase-2-ros2/                 # 第二阶段：ROS2
+│   │   ├── 📄 ros2-core-concepts.md     # 核心概念
+│   │   ├── 📄 workspace-management.md   # 工作空间管理
+│   │   ├── 📄 node-communication.md     # 节点通信
+│   │   ├── 📄 topic-service-action.md   # 话题/服务/动作
+│   │   ├── 📄 parameter-server.md       # 参数服务器
+│   │   ├── 📄 launch-files.md           # 启动文件
+│   │   ├── 📄 rviz2-visualization.md    # RViz2 可视化
+│   │   └── 📄 debugging-tools.md        # 调试工具
+│   ├── 📁 phase-2-gazebo/               # 第二阶段：Gazebo
+│   │   ├── 📄 gazebo-basics.md          # 基础操作
+│   │   ├── 📄 world-model-files.md      # 世界与模型文件
+│   │   ├── 📄 sensor-integration.md     # 传感器集成
+│   │   ├── 📄 robot-control.md          # 机器人控制
+│   │   ├── 📄 ros2-bridge.md            # ROS2 桥接
+│   │   ├── 📄 plugin-development.md     # 插件开发
+│   │   └── 📄 simulation-debugging.md   # 仿真调试
+│   └── 📁 practice-reports/             # 实践报告汇总
+│       ├── 📁 week-1-2/                 # 第1-2周实践
+│       ├── 📁 week-3/                   # 第3周实践
+│       └── 📁 week-4/                   # 第4周实践
+├── 📁 projects/                          # 项目代码目录
+│   ├── 📁 CryptoTool/                   # 加密工具项目
+│   │   ├── 📄 CMakeLists.txt
+│   │   ├── 📁 src/
+│   │   ├── 📁 include/
+│   │   └── 📁 test/
+│   ├── 📁 TrafficLightDetection/        # 交通灯检测项目
+│   │   ├── 📄 CMakeLists.txt
+│   │   ├── 📁 src/
+│   │   ├── 📁 data/
+│   │   └── 📁 config/
+│   ├── 📁 ros2_workspace/               # ROS2 工作空间
+│   │   ├── 📁 src/
+│   │   │   ├── 📁 my_first_package/     # 第一个功能包
+│   │   │   ├── 📁 topic_example/        # 话题通信示例
+│   │   │   ├── 📁 service_example/      # 服务通信示例
+│   │   │   ├── 📁 tf_example/           # TF 示例
+│   │   │   └── 📁 launch_example/       # 启动文件示例
+│   │   ├── 📄 setup.bash
+│   │   └── 📄 build_instructions.md
+│   └── 📁 gazebo_simulation/            # Gazebo 仿真项目
+│       ├── 📁 worlds/                   # 世界文件
+│       │   ├── 📄 empty.world
+│       │   ├── 📄 sensor_test.world
+│       │   └── 📄 robot_navigation.world
+│       ├── 📁 models/                   # 机器人模型
+│       │   ├── 📁 my_robot/
+│       │   ├── 📁 simple_car/
+│       │   └── 📁 sensor_box/
+│       ├── 📁 launch/                   # 启动文件
+│       │   ├── 📄 gazebo_standalone.launch.py
+│       │   ├── 📄 ros2_gazebo_bridge.launch.py
+│       │   └── 📄 rviz_display.launch.py
+│       └── 📁 plugins/                  # Gazebo 插件
+│           ├── 📁 world_plugins/
+│           └── 📁 model_plugins/
+├── 📁 scripts/                          # 实用脚本
+│   ├── 📁 setup-scripts/               # 环境设置脚本
+│   ├── 📁 build-scripts/               # 构建脚本
+│   ├── 📁 test-scripts/                # 测试脚本
+│   └── 📁 utility-scripts/             # 工具脚本
+├── 📁 resources/                        # 资源文件
+│   ├── 📁 images/                      # 图片资源
+│   ├── 📁 videos/                      # 视频资源
+│   ├── 📁 configs/                     # 配置文件
+│   └── 📁 references/                  # 参考文档
+├── 📁 tutorials/                       # 教程示例
+│   ├── 📁 ros2-tutorials/              # ROS2 教程
+│   ├── 📁 gazebo-tutorials/            # Gazebo 教程
+│   └── 📁 opencv-tutorials/            # OpenCV 教程
+└── 📁 notes/                           # 个人学习笔记
+    ├── 📁 weekly-summaries/            # 每周总结
+    ├── 📁 problem-solutions/           # 问题解决方案
+    ├── 📁 best-practices/              # 最佳实践
+    └── 📁 cheatsheets/                 # 命令速查表
 图像处理基础
 # 基础图像操作示例
 import cv2
