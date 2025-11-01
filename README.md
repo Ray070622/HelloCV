@@ -5,46 +5,31 @@ HelloCV/
 ├── 📄 YUQUE_LINKS.md                     # 语雀学习文档汇总
 ├── 📁 docs/                              # 项目文档目录
 │   ├── 📁 docker-learning/               # Docker 学习资料
-│   │   ├── 📄 basic-concepts.md          # 基础概念笔记
-│   │   ├── 📄 commands-handbook.md       # 命令手册
-│   │   └── 📄 practice-records.md        # 实践记录
 │   ├── 📁 cmake-learning/                # CMake 学习资料
-│   │   ├── 📄 cmake-introduction.md      # CMake 介绍
-│   │   ├── 📄 advanced-features.md       # 高级特性
-│   │   └── 📄 troubleshooting.md         # 问题排查
-│   └── 📁 practice-reports/              # 实践报告
-│       ├── 📄 cryptotool-development.md  # 加密工具开发报告
-│       └── 📄 traffic-light-detection.md # 交通灯检测报告
+│   ├── 📁 practice-reports/              # 实践报告
+│   ├── 📁 ros2-learning/                 # 【新增】ROS2 学习资料
+│   │   ├── 📄 basic-concepts.md          # ROS2 基础概念
+│   │   ├── 📄 communication-mechanisms.md # 通信机制详解
+│   │   └── 📄 practice-guide.md          # 实践指南
+│   └── 📁 gazebo-learning/               # 【新增】Gazebo 学习资料
+│       ├── 📄 simulation-basics.md       # 仿真基础
+│       ├── 📄 sensor-integration.md      # 传感器集成
+│       └── 📄 ros2-gazebo-bridge.md      # ROS2-Gazebo 桥接
 ├── 📁 CryptoTool/                        # 文本加密工具项目
-│   ├── 📄 CMakeLists.txt                 # 项目构建配置
-│   ├── 📁 src/                           # 源代码目录
-│   │   ├── 📄 main.cpp                   # 主程序入口
-│   │   ├── 📄 crypto.cpp                 # 加密算法实现
-│   │   ├── 📄 crypto.h                   # 加密算法头文件
-│   │   ├── 📄 file_handler.cpp           # 文件处理实现
-│   │   ├── 📄 file_handler.h             # 文件处理头文件
-│   │   ├── 📄 menu.cpp                   # 用户界面实现
-│   │   └── 📄 menu.h                     # 用户界面头文件
-│   ├── 📁 include/                       # 头文件目录
-│   └── 📁 build/                         # 构建输出目录
 ├── 📁 TrafficLightDetection/             # 交通信号灯检测项目
-│   ├── 📄 CMakeLists.txt                 # 项目构建配置
-│   ├── 📁 src/                           # 源代码目录
-│   │   ├── 📄 main.cpp                   # 主程序入口
-│   │   └── 📄 traffic_light_detector.cpp # 检测器实现
-│   ├── 📁 data/                          # 数据文件目录
-│   │   ├── 📄 TrafficLight.mp4           # 输入视频文件
-│   │   └── 📄 result.avi                 # 输出结果视频
-│   └── 📁 build/                         # 构建输出目录
 ├── 📁 docker-examples/                   # Docker 实践示例
-│   ├── 📄 Dockerfile                     # 基础 Dockerfile
-│   ├── 📄 docker-compose.yml             # 容器编排配置
-│   └── 📁 practice-scripts/              # 练习脚本
 ├── 📁 cmake-examples/                    # CMake 实践示例
-│   ├── 📄 basic-example/                 # 基础示例
-│   ├── 📄 multi-directory/               # 多目录项目
-│   └── 📄 thirdparty-integration/        # 第三方库集成
-└── 📄 requirements.txt                   # Python 依赖列表
+├── 📁 ros2-workspace/                    # 【新增】ROS2 工作空间
+│   ├── 📁 src/                           # 功能包源代码
+│   │   ├── 📁 my_robot_description/      # 机器人描述包
+│   │   ├── 📁 my_controller/             # 控制节点包
+│   │   └── 📁 my_sensors/                # 传感器节点包
+│   └── 📄 setup_instructions.md          # 环境配置说明
+└── 📁 gazebo-simulation/                 # 【新增】Gazebo 仿真项目
+    ├── 📁 worlds/                        # 仿真世界文件
+    ├── 📁 models/                        # 机器人模型
+    ├── 📁 launch/                        # 启动文件
+    └── 📄 simulation_guide.md            # 仿真使用指南
 图像处理基础
 # 基础图像操作示例
 import cv2
@@ -472,3 +457,37 @@ OpenCV 核心技术应用
 边缘检测：Canny、Sobel、Laplacian算子
 形状检测：霍夫圆变换、霍夫线变换
 颜色识别：HSV色彩空间阈值分割
+
+ROS2 机器人操作系统
+
+内容概述：
+
+ROS2 工作空间与功能包管理
+节点通信机制（话题、服务、参数）
+C++ 节点编写与生命周期管理
+RViz2 可视化调试实战
+Launch 文件配置与多节点启动
+核心技术点：
+
+Publisher-Subscriber 模式实现
+Client-Server 服务通信
+QoS 服务质量配置
+TF 坐标系管理
+参数服务器动态配置
+
+Gazebo 机器人仿真
+
+内容概述：
+
+Gazebo 仿真环境搭建与配置
+世界文件与模型文件结构解析
+传感器集成与数据流处理
+ROS2 与 Gazebo 联合仿真
+机器人控制与可视化调试
+实践内容：
+
+RGB 摄像头与深度相机配置
+IMU 传感器数据发布
+键盘控制与 cmd_vel 话题
+TF 与 odom 里程计信息
+RViz2 与 Gazebo 联动调试
